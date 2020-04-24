@@ -27,7 +27,6 @@ class CheckPoint_PT_SaveCP (bpy.types.Panel):
         row = layout.row()
         self.layout.operator('save.button',icon= 'GREASEPENCIL')
         
-        #row.prop(scene, "overwrite")
         
 
 class Save_OT_button(bpy.types.Operator):
@@ -54,9 +53,7 @@ def register():
     bpy.types.Scene.description =  bpy.props.StringProperty(name = '',
                              default = 'description',
                              maxlen = 1024,)
-    bpy.types.Scene.overwrite = bpy.props.BoolProperty(
-        name = 'Overwrite',
-        default = False)
+
     for regist_cls in regist_classes:
         bpy.utils.register_class(regist_cls)
 
