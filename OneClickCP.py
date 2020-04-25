@@ -1,8 +1,22 @@
 import bpy,os,datetime
 
-class CheckPoint_PT_SaveCP (bpy.types.Panel):
+bl_info = {
+  "name": "OneClickCP",
+  "description": "making Chaeck Point", 
+  "author": "akifumi139",
+  "version": (1, 0, 0, 0),  
+  "blender": (2, 82, 0), 
+  "support": "TESTING",
+  "category": "tool",            
+  "location": "",
+  "warning": "",  
+  "wiki_url": "", 
+  "tracker_url": ""          
+}
+
+class CHECKPOINT_PT_SaveCP (bpy.types.Panel):
     bl_label = 'Save CP'
-    bl_idname ='Save_PT_cp'
+    bl_idname ='Save.CP'
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'OneClick'
@@ -29,7 +43,7 @@ class CheckPoint_PT_SaveCP (bpy.types.Panel):
         
         
 
-class Save_OT_button(bpy.types.Operator):
+class SAVE_OT_button(bpy.types.Operator):
     bl_label = 'Save'
     bl_idname = 'save.button'
 
@@ -38,8 +52,8 @@ class Save_OT_button(bpy.types.Operator):
         return{'FINISHED'}
     
 regist_classes = (
-    CheckPoint_PT_SaveCP,
-    Save_OT_button
+    CHECKPOINT_PT_SaveCP,
+    SAVE_OT_button
 )    
 
 
